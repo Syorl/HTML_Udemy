@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAROTAS PALHAÇO</title>
+    <link rel="shortcut icon" href="https://pbs.twimg.com/media/F-vozSAWwAAiDxI?format=jpg&name=large" type="image/x-icon">
+</head>
+<style>
+    img {
+            display: block; /* Isso garante que a margem automática funcione corretamente */
+            margin: auto;
+        }
+        h1 {
+            color: #00e5f1; /* Altere para a cor desejada usando códigos de cor hexadecimais, RGB, etc. */
+            text-align: center;
+        }
+        h2 {
+            color: #ffbb0f; /* Altere para a cor desejada usando códigos de cor hexadecimais, RGB, etc. */
+            text-align: center;
+        }
+        p {
+            color: rgb(255, 255, 255); /* Altere para a cor desejada usando códigos de cor hexadecimais, RGB, etc. */
+        }
+        #audio-container {
+            display: none;
+        }
+        #muteButton {
+        background-color: #ffbb0f;
+        color: #000000;
+        padding: 10px 20px;
+        font-size: 18px;
+        cursor: pointer;
+        border: none;
+        margin-top: 20px;
+    }
+
+</style>
+<body bgcolor="#86001C">
+    <h1>Garotas Palhaço</h1>
+    <h2>Meu nome é Enias e estudo desdos 6 anos de idade....</p>
+    <p>EU QUERIA QUE TENTANDO DISFARÇARRR</p>
+    <img src="https://pbs.twimg.com/media/F-vozSAWwAAiDxI?format=jpg&name=large" width="800" height="1040"alt="Garota PALHAXOTA">
+
+    <div id="audio-container">
+        <audio id="myAudio" loop>
+            <source src="https://cdn.discordapp.com/attachments/1065715248230846576/1175228990546518077/Your_New_Home_128_kbps.mp3?ex=656a784a&is=6558034a&hm=99081f87e47fcc3e5ba3be00bb34dcc758ae2c29855ee89b5fcf3965c3f39ddd&" type="audio/mp3">
+            Seu navegador não suporta a tag de áudio.
+        </audio>
+    </div>
+
+    <button id="muteButton">Mudo</button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var audio = document.getElementById('myAudio');
+            var muteButton = document.getElementById('muteButton');
+
+            // Função para alternar entre som e mudo
+            function toggleMute() {
+                audio.muted = !audio.muted;
+            }
+
+            // Iniciar áudio programaticamente
+            audio.play().then(() => {
+                document.getElementById('audio-container').style.display = 'block';
+            }).catch(error => {
+                console.error('Erro ao reproduzir áudio:', error);
+            });
+
+            // Adicionar evento de clique ao botão de mudo
+            muteButton.addEventListener('click', toggleMute);
+        });
+    </script>
+</body>
+</html>
